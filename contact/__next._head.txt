@@ -2,6 +2,6 @@
 2:I[70718,["/Portfolio/_next/static/chunks/9acea6f0d5f43e98.js","/Portfolio/_next/static/chunks/c4b2d6a2ff184a02.js"],"ViewportBoundary"]
 4:I[70718,["/Portfolio/_next/static/chunks/9acea6f0d5f43e98.js","/Portfolio/_next/static/chunks/c4b2d6a2ff184a02.js"],"MetadataBoundary"]
 5:"$Sreact.suspense"
-0:{"buildId":"gwuhf6bb694whygzDPeEi","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"W2fJkq1OMbrziSPd-J8az","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
 3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 6:[["$","title","0",{"children":"Portfolio - CSE Student"}],["$","meta","1",{"name":"description","content":"Interactive portfolio showcasing projects and skills"}]]
