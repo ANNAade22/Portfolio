@@ -20,9 +20,18 @@ const groote = Space_Grotesk({
 
 const sparkConfig = config.globalLayers.ClickSpark;
 
+import { getPath } from '@/lib/basePath';
+
+// ... imports
+
 export const metadata: Metadata = {
-  title: 'Portfolio - CSE Student',
+  title: 'Portfolio',
   description: 'Interactive portfolio showcasing projects and skills',
+  icons: {
+    icon: getPath('/Anas.png'),
+    shortcut: getPath('/Anas.png'),
+    apple: getPath('/Anas.png'),
+  },
 };
 
 export default function RootLayout({
