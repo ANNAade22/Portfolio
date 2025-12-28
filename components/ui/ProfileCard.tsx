@@ -2,6 +2,7 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { getPath } from '@/lib/basePath';
 
 interface ProfileCardProps {
   name: string;
@@ -77,12 +78,12 @@ export function ProfileCard({
     >
       {/* Card background with gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-panel to-panel/80 rounded-2xl border border-accent/20" />
-      
+
       <div className="relative z-10 space-y-4">
         {/* Avatar */}
         <div className="w-24 h-24 mx-auto rounded-full bg-accent/20 border-2 border-accent overflow-hidden">
           {avatarUrl && avatarUrl !== '/path/to/avatar.jpg' ? (
-            <img src={avatarUrl} alt={name} className="w-full h-full object-cover" />
+            <img src={getPath(avatarUrl)} alt={name} className="w-full h-full object-cover" />
           ) : (
             <div className="w-full h-full flex items-center justify-center text-4xl font-bold text-accent">
               {name.charAt(0)}
@@ -95,7 +96,7 @@ export function ProfileCard({
           <h3 className="text-xl font-bold text-text">{name}</h3>
           <p className="text-text/70">{title}</p>
           <p className="text-accent text-sm">{handle}</p>
-          
+
           <div className="flex items-center justify-center gap-2 pt-2">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             <span className="text-sm text-text/60">{status}</span>

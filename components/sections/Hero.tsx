@@ -1,11 +1,25 @@
+```javascript
 'use client';
 
+import { useRef } from 'react';
+import { getPath } from '@/lib/basePath';
 import { BlurText } from '@/components/ui/BlurText';
 import { SomaliStar } from '@/components/ui/SomaliStar';
 import config from '@/portfolio-plan.json';
+import { ProfileCard } from '@/components/ui/ProfileCard';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export function Hero() {
   const { hero } = config.sections;
+  const targetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start start", "end start"]
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
+  const y = useTransform(scrollYProgress, [0, 0.5], [0, 50]);
 
   const scrollToProjects = () => {
     const projectsSection = document.getElementById('projects');
@@ -13,23 +27,23 @@ export function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative px-4 pt-20 pb-10">
+    <section ref={targetRef} className="min-h-screen flex flex-col justify-center items-center relative px-4 pt-20">
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <SomaliStar />
       </div>
 
-      <div className="max-w-4xl mx-auto flex flex-col items-center justify-center text-center z-10 space-y-8">
-        {/* Profile Image - Centered and Circular */}
+      <motion.div style={{ opacity, scale, y }} className="max-w-4xl w-full flex flex-col items-center gap-12 z-10">
+
+        {/* Profile Card / Avatar */}
         <div className="relative group">
           <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-panel/50 overflow-hidden shadow-2xl relative z-10">
             <img
-              src={hero.profileCard.avatarUrl || '/Anas.png'}
+              src={hero.profileCard.avatarUrl ? getPath(hero.profileCard.avatarUrl) : getPath('/Anas.png')}
               alt={hero.profileCard.name}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
           </div>
-          {/* Subtle glow behind avatar */}
-          <div className="absolute inset-0 bg-accent/20 rounded-full blur-xl transform group-hover:scale-125 transition-transform duration-500 -z-10" />
+          <div className="absolute -inset-4 bg-gradient-to-r from-accent/20 to-purple-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </div>
 
         {/* Main Heading */}

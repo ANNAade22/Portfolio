@@ -4,6 +4,7 @@ import CardSwap, { Card as SwapCard } from '@/components/ui/CardSwap';
 import { CardStack } from '@/components/ui/card-stack';
 import config from '@/portfolio-plan.json';
 import { useState, useEffect } from 'react';
+import { getPath } from '@/lib/basePath';
 
 export function Projects() {
   const { projects } = config.sections;
@@ -29,7 +30,7 @@ export function Projects() {
       <div className="w-full h-full flex items-center justify-center">
         {card.imageUrl && (
           <img
-            src={card.imageUrl}
+            src={getPath(card.imageUrl)}
             alt={card.title}
             className="w-full h-full object-cover rounded-2xl"
           />
@@ -74,7 +75,7 @@ export function Projects() {
                   <div className="relative h-[65%] w-full overflow-hidden bg-black/20">
                     {card.imageUrl && (
                       <img
-                        src={card.imageUrl}
+                        src={getPath(card.imageUrl)}
                         alt={`${card.title} preview`}
                         className="w-full h-full transition-transform duration-700 group-hover:scale-105"
                         style={{
