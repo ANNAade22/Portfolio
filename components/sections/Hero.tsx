@@ -1,4 +1,4 @@
-```javascript
+
 'use client';
 
 import { useRef } from 'react';
@@ -87,7 +87,7 @@ export function Hero() {
             <path d="M7 6l5 5 5-5" />
           </svg>
         </button>
-      </div>
+      </motion.div>
     </section>
   );
 }
