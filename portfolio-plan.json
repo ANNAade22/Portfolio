@@ -1,0 +1,141 @@
+{
+  "palette": {
+    "background": "#011627",
+    "panel": "#0b111b",
+    "panelSoft": "rgba(11, 17, 27, 0.8)",
+    "accent": "#4189DD",
+    "text": "#f5f6fa"
+  },
+  "globalLayers": {
+    "Silk": {
+      "speed": 5,
+      "scale": 1,
+      "color": "#4189DD",
+      "noiseIntensity": 1.5,
+      "rotation": 0,
+      "coverage": "full-screen"
+    },
+    "SomaliStar": {
+      "type": "svg",
+      "alignment": "centered",
+      "color": "#4189DD",
+      "glow": true
+    },
+    "ClickSpark": {
+      "sparkColor": "#fff",
+      "sparkSize": 10,
+      "sparkRadius": 15,
+      "sparkCount": 8,
+      "duration": 400
+    }
+  },
+  "sections": {
+    "hero": {
+      "heading": "I design thoughtful web apps for universities, turning research ideas into reliable products.",
+      "blurText": {
+        "text": "Curious mind. Clean code. Helpful experiences.",
+        "delay": 120,
+        "animateBy": "words",
+        "direction": "top"
+      },
+      "profileCard": {
+        "name": "Anas Abdulkadir Hussein",
+        "title": "Web Software Engineer",
+        "handle": "anasadbulkadirhussein@gmail.com",
+        "status": "Online",
+        "contactText": "Contact Me",
+        "avatarUrl": "/Anas.png",
+        "showUserInfo": true,
+        "enableTilt": true,
+        "enableMobileTilt": false
+      },
+      "cta": {
+        "text": "See projects",
+        "type": "scroll",
+        "target": "projects",
+        "color": "#4189DD"
+      }
+    },
+    "projects": {
+      "title": "My Work",
+      "subtitle": "Selected platforms built for students, faculty, and researchers.",
+      "cardSwap": {
+        "cardDistance": 220,
+        "verticalDistance": 0,
+        "delay": 4000,
+        "pauseOnHover": true,
+        "cards": [
+          {
+            "title": "Campus Nexus",
+            "description": "A multi-tenant dashboard where Al-Marwazi University teams plan events, publish updates, and review analytics in real time.",
+            "tech": [
+              "Next.js",
+              "TypeScript",
+              "Supabase",
+              "Tailwind CSS"
+            ],
+            "linkText": "Explore case study",
+            "linkUrl": "https://almarwazi.vercel.app/",
+            "imageUrl": "/imageProject1.png",
+            "imageFit": "contain",
+            "imagePosition": "center"
+          },
+          {
+            "title": "Scholarship Radar",
+            "description": "Aggregates national scholarships, lets students filter by eligibility, and sends reminder emails ahead of deadlines.",
+            "tech": [
+              "React",
+              "Node.js",
+              "PostgreSQL",
+              "Resend"
+            ],
+            "linkText": "View live demo",
+            "linkUrl": "https://almarwazi.vercel.app/",
+            "imageUrl": "/imageProject2.png",
+            "imageFit": "contain",
+            "imagePosition": "center top"
+          },
+          {
+            "title": "LabFlow",
+            "description": "Digital lab notebook with versioned notes, experiment templates, and Firebase-backed collaboration for research assistants.",
+            "tech": [
+              "Node.js",
+              "Firebase",
+              "Fastify",
+              "Framer Motion"
+            ],
+            "linkText": "Read more",
+            "linkUrl": "https://github.com/anasabdulkadirhussein/labflow",
+            "imageUrl": "/imageProject3.png",
+            "imageFit": "contain",
+            "imagePosition": "top"
+          }
+        ]
+      }
+    },
+    "about": {
+      "summary": "I’m Anas, a software engineer focused on building calm, useful tools for campus communities. I translate messy requirements into research-backed prototypes, test with real users, and iterate until the interaction feels effortless.",
+      "skills": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Node.js",
+        "Express/Fastify",
+        "PostgreSQL",
+        "Firebase",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Product discovery",
+        "Figma handoff"
+      ]
+    },
+    "footer": {
+      "cta": "Let’s build the next tool for students or faculty. I’m open to freelance work and collaborations.",
+      "button": {
+        "text": "Email Anas",
+        "color": "#4189DD",
+        "action": "mailto:anasadbulkadirhussein@gmail.com"
+      }
+    }
+  }
+}

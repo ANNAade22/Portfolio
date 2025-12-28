@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .glow {
+    filter: drop-shadow(0 0 20px currentColor);
+  }
+
+  .glow-accent {
+    filter: drop-shadow(0 0 20px #4189DD);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  background-color: #011627;
+  min-height: 100%;
+}
+
+body {
+  background-color: #011627;
+  color: #f5f6fa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+.glow {
+  filter: drop-shadow(0 0 20px currentColor);
+}
+
+.glow-accent {
+  filter: drop-shadow(0 0 20px #4189DD);
+}
