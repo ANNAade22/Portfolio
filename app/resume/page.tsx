@@ -30,13 +30,13 @@ export default function ResumePage() {
                         Change that fuels product growth and improves human lives.
                     </p>
 
-                    <div className="pt-4 flex flex-col items-center gap-6">
+                    <div className="flex flex-col items-center gap-2">
                         {/* Clickable Scroll Arrow */}
                         <motion.button
                             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                             animate={{ y: [0, 10, 0] }}
                             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                            className="text-white/70 hover:text-white transition-colors mt-4"
+                            className="text-white hover:text-accent transition-colors"
                             aria-label="Scroll to content"
                         >
                             <svg
