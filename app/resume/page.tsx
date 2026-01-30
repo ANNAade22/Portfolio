@@ -21,13 +21,13 @@ export default function ResumePage() {
                     className="max-w-4xl mx-auto space-y-8"
                 >
                     <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white/90 leading-[1.1] sm:leading-[1.1]">
-                        I bring <span className="font-bold text-white">curiosity</span>, <span className="font-bold text-white">collaboration</span>,
-                        and a <span className="font-bold text-white">human-centered</span> mindset
-                        to drive <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">meaningful change.</span>
+                        I combine <span className="font-bold text-white">Software Engineering</span> with <span className="font-bold text-white">Cyber Security</span>,
+                        building <span className="font-bold text-white">secure</span> applications that
+                        <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-white"> scale with confidence.</span>
                     </h1>
 
                     <p className="text-xl md:text-2xl text-text/60 max-w-2xl mx-auto leading-relaxed font-light">
-                        Change that fuels product growth and improves human lives.
+                        From graphic design roots to full-stack security-focused engineering.
                     </p>
 
                     <div className="flex flex-col items-center gap-2">
@@ -48,7 +48,6 @@ export default function ResumePage() {
                                 strokeWidth="2"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
-                                className="rotate-180"
                             >
                                 <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
                             </svg>
@@ -70,19 +69,19 @@ export default function ResumePage() {
                     </motion.h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <ResumeCard title="Behavior" delay={0.1}>
+                        <ResumeCard title="Security First" delay={0.1}>
                             <p>
-                                I stay curious, outcome-focused, and pragmatic. I build trust with peers and stakeholders by working collaboratively toward shared goals.
+                                I don't just build features; I ensure they are secure. My background in Cyber Security means I think about vulnerabilities before writing the first line of code.
                             </p>
                         </ResumeCard>
-                        <ResumeCard title="Strengths" delay={0.2}>
+                        <ResumeCard title="Creative Eye" delay={0.2}>
                             <p>
-                                I balance hands-on design with strategic vision. My strength lies in turning user insights into experiences that create real business value.
+                                With years of experience using Adobe Creative Suite, I bridge the gap between engineering and design, creating interfaces that are both beautiful and functional.
                             </p>
                         </ResumeCard>
-                        <ResumeCard title="Mindset" delay={0.3}>
+                        <ResumeCard title="Problem Solver" delay={0.3}>
                             <p>
-                                I help others succeed by fostering inclusion and focusing on outcomes. With a human-centered mindset, I create experiences that make a difference.
+                                Whether it's a complex University Management System or leading a startup, I break down big problems into manageable, scalable solutions.
                             </p>
                         </ResumeCard>
                     </div>
@@ -99,31 +98,35 @@ export default function ResumePage() {
                     </motion.h2>
 
                     <div className="space-y-6">
-                        <ResumeCard title="Senior Product Designer" subtitle="Company Name • 2022 - Present">
+                        <ResumeCard title="CEO & Founder" subtitle="DEKO Startup • 2021 - Present">
                             <p className="mb-4">
-                                Leading the design system initiative and overseeing the UX for the core product suite.
+                                Founded and led a startup focused on delivering innovative digital solutions.
                             </p>
                             <ul className="list-disc list-inside space-y-2 text-text/70">
-                                <li>Spearheaded a complete redesign of the dashboard, increasing user engagement by 40%.</li>
-                                <li>Mentored junior designers and established a weekly design critique session.</li>
-                                <li>Collaborated closely with engineering to ensure pixel-perfect implementation.</li>
+                                <li>Directed product strategy and business development.</li>
+                                <li>Managed a cross-functional team of developers and designers.</li>
+                                <li>Oversaw the end-to-end lifecycle of client projects.</li>
                             </ul>
                         </ResumeCard>
 
-                        <ResumeCard title="Product Designer" subtitle="Previous Corp • 2020 - 2022">
+                        <ResumeCard title="Software Engineer" subtitle="Freelance & Contract • 2021 - Present">
                             <p className="mb-4">
-                                Focused on mobile app experiences and scaling the consumer-facing platform.
+                                Specializing in Full Stack Development and Web Applications.
                             </p>
                             <ul className="list-disc list-inside space-y-2 text-text/70">
-                                <li>Designed and launched the iOS and Android apps from scratch.</li>
-                                <li>Conducted user research that led to a pivot in the onboarding flow.</li>
+                                <li>Developed a comprehensive University Management System with role-based dashboards.</li>
+                                <li>Built high-performance landing pages and e-commerce sites for beauty and construction clients.</li>
                             </ul>
                         </ResumeCard>
 
-                        <ResumeCard title="UX/UI Designer" subtitle="StartUp Inc • 2018 - 2020">
+                        <ResumeCard title="Graphic Designer" subtitle="Freelance • 2019 - 2021">
                             <p>
-                                Worked in a fast-paced environment wearing multiple hats from research to frontend code.
+                                Extensive experience with Adobe Creative Cloud (After Effects, Premiere Pro, Illustrator).
                             </p>
+                            <ul className="list-disc list-inside space-y-2 text-text/70">
+                                <li>Created brand identities, logos, and marketing materials.</li>
+                                <li>Produced motion graphics and video edits for digital campaigns.</li>
+                            </ul>
                         </ResumeCard>
                     </div>
                 </section>
@@ -139,7 +142,7 @@ export default function ResumePage() {
                     </motion.h2>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        {['Product Strategy', 'UI/UX Design', 'Design Systems', 'User Research', 'Prototyping', 'Frontend Dev', 'Motion Design', 'Testing'].map((role, i) => (
+                        {['Cyber Security', 'Full Stack Dev', 'App Development', 'Network Security', 'Pentesting', 'UI/UX Design', 'Motion Graphics', 'Startup Founder'].map((role, i) => (
                             <ResumeCard key={role} delay={i * 0.05} className="text-center py-8 flex items-center justify-center">
                                 <span className="font-bold text-lg">{role}</span>
                             </ResumeCard>
@@ -158,14 +161,14 @@ export default function ResumePage() {
                     </motion.h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <ResumeCard title="Engineering Roots">
+                        <ResumeCard title="From Design to Code">
                             <p>
-                                I started my journey writing code, giving me a deep understanding of technical constraints and possibilities. This allows me to communicate effectively with developers and ship feasible designs.
+                                My journey started with visual creativity in Graphic Design. Using tools like Adobe After Effects gave me a taste for detail, which I eventually translated into code. I realized that building the engine behind the visuals was just as creative.
                             </p>
                         </ResumeCard>
-                        <ResumeCard title="Design Evolution">
+                        <ResumeCard title="The Security Focus">
                             <p>
-                                Over time, I realized my true passion lay in the "why" and "how" of user interaction. I pivoted to design to solve problems at their core, ensuring technology serves human needs.
+                                As I dove deeper into software engineering, I understood that functionality without security is a liability. My education at LPU and my work in Cyber Security ensures that the systems I build are robust, safe, and reliable.
                             </p>
                         </ResumeCard>
                     </div>
@@ -182,24 +185,19 @@ export default function ResumePage() {
                     </motion.h2>
 
                     <div className="grid grid-cols-1 gap-6">
-                        <ResumeCard title="Bachelor of Computer Science" subtitle="University of Technology • 2016 - 2020">
+                        <ResumeCard title="Lovely Professional University" subtitle="Punjab, India • 2021 - 2025">
                             <p>
-                                Specialized in Human-Computer Interaction and Software Engineering. Graduated with honors.
+                                Focusing on Computer Science, Software Engineering, and Cyber Security.
                             </p>
-                        </ResumeCard>
-                        <ResumeCard title="Professional Certifications" subtitle="Various Institutions • 2021">
                             <ul className="list-disc list-inside mt-2 space-y-1 text-text/70">
-                                <li>Google UX Design Certificate</li>
-                                <li>Advanced React Patterns Workshop</li>
-                                <li>Accessibility in Modern Web Applications</li>
+                                <li>Deep dive into Network Security and Application Security.</li>
+                                <li>Full Stack Web and Mobile App Development.</li>
                             </ul>
                         </ResumeCard>
                     </div>
                 </section>
 
             </div>
-
-            {/* Download Button Section Removed - Footer will take over */}
 
             {/* Footer added to the Resume Page */}
             <div id="contact">

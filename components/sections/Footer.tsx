@@ -111,7 +111,7 @@ export function Footer() {
                 {hero.profileCard.title}
               </p>
               <p className="text-text/50 text-sm">
-                Building thoughtful web applications for educational communities.
+                {hero.heading}
               </p>
             </motion.div>
 

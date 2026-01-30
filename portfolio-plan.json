@@ -31,16 +31,16 @@
   },
   "sections": {
     "hero": {
-      "heading": "I design thoughtful web apps for universities, turning research ideas into reliable products.",
+      "heading": "Turning any idea into a secure, scalable, and thoughtful web reality.",
       "blurText": {
-        "text": "Curious mind. Clean code. Helpful experiences.",
+        "text": "Cyber Security. Creative Design. Scalable Systems.",
         "delay": 120,
         "animateBy": "words",
         "direction": "top"
       },
       "profileCard": {
         "name": "Anas Abdulkadir Hussein",
-        "title": "Web Software Engineer",
+        "title": "Software Engineer & Security Researcher",
         "handle": "anasadbulkadirhussein@gmail.com",
         "status": "Online",
         "contactText": "Contact Me",
@@ -58,7 +58,7 @@
     },
     "projects": {
       "title": "My Work",
-      "subtitle": "Selected platforms built for students, faculty, and researchers.",
+      "subtitle": "A selection of platforms, tools, and designs built for impact.",
       "cardSwap": {
         "cardDistance": 220,
         "verticalDistance": 0,
@@ -66,71 +66,84 @@
         "pauseOnHover": true,
         "cards": [
           {
-            "title": "Campus Nexus",
-            "description": "A multi-tenant dashboard where Al-Marwazi University teams plan events, publish updates, and review analytics in real time.",
+            "title": "University Management System",
+            "description": "Comprehensive dashboard for Students, Teachers, Admins, and Parents with role-based access control.",
             "tech": [
               "Next.js",
               "TypeScript",
-              "Supabase",
-              "Tailwind CSS"
+              "PostgreSQL",
+              "Role-Based Auth"
             ],
-            "linkText": "Explore case study",
-            "linkUrl": "https://almarwazi.vercel.app/",
-            "imageUrl": "/imageProject1.png",
+            "linkText": "View details",
+            "linkUrl": "#",
+            "imageUrl": "/project-university-system.png",
             "imageFit": "contain",
             "imagePosition": "center"
           },
           {
-            "title": "Scholarship Radar",
-            "description": "Aggregates national scholarships, lets students filter by eligibility, and sends reminder emails ahead of deadlines.",
+            "title": "University Landing Page",
+            "description": "Modern, high-conversion landing page designed to attract prospective students and showcase campus life.",
             "tech": [
               "React",
-              "Node.js",
-              "PostgreSQL",
-              "Resend"
+              "Tailwind CSS",
+              "Framer Motion"
             ],
-            "linkText": "View live demo",
-            "linkUrl": "https://almarwazi.vercel.app/",
-            "imageUrl": "/imageProject2.png",
+            "linkText": "Visit site",
+            "linkUrl": "#",
+            "imageUrl": "/project-landing-page.png",
             "imageFit": "contain",
             "imagePosition": "center top"
           },
           {
-            "title": "LabFlow",
-            "description": "Digital lab notebook with versioned notes, experiment templates, and Firebase-backed collaboration for research assistants.",
+            "title": "Construction Portfolio",
+            "description": "A professional portfolio for a construction company showcasing projects and services.",
             "tech": [
-              "Node.js",
-              "Firebase",
-              "Fastify",
-              "Framer Motion"
+              "Next.js",
+              "Tailwind CSS",
+              "Responsive Design"
             ],
-            "linkText": "Read more",
-            "linkUrl": "https://github.com/anasabdulkadirhussein/labflow",
-            "imageUrl": "/imageProject3.png",
+            "linkText": "View case study",
+            "linkUrl": "#",
+            "imageUrl": "/project-construction.png",
             "imageFit": "contain",
             "imagePosition": "top"
+          },
+          {
+            "title": "Beauty Company Website",
+            "description": "Elegant and visual-first e-commerce interface for a beauty brand.",
+            "tech": [
+              "React",
+              "Shopify/Custom",
+              "Design Systems"
+            ],
+            "linkText": "Explore",
+            "linkUrl": "#",
+            "imageUrl": "/project-beauty.png",
+            "imageFit": "contain",
+            "imagePosition": "center"
           }
         ]
       }
     },
     "about": {
-      "summary": "I’m Anas, a software engineer focused on building calm, useful tools for campus communities. I translate messy requirements into research-backed prototypes, test with real users, and iterate until the interaction feels effortless.",
+      "summary": "I’m Anas, a Software Engineer and Cyber Security specialist. I graduated from Lovely Professional University (2021-2025) in Punjab, India. With a background in Graphic Design (Adobe Creative Suite) and startup leadership as CEO of DEKO, I blend technical security expertise with creative problem-solving.",
       "skills": [
+        "Network Security",
+        "Penetration Testing",
+        "Python",
+        "C++",
         "Next.js",
         "React",
         "TypeScript",
         "Node.js",
-        "Express/Fastify",
         "PostgreSQL",
-        "Firebase",
-        "Tailwind CSS",
-        "Framer Motion",
-        "Product discovery",
-        "Figma handoff"
+        "Adobe After Effects",
+        "Adobe Premiere Pro",
+        "Adobe Illustrator"
       ]
     },
     "footer": {
-      "cta": "Let’s build the next tool for students or faculty. I’m open to freelance work and collaborations.",
+      "cta": "Let’s build something secure and beautiful. Open for collaborations.",
       "button": {
         "text": "Email Anas",
         "color": "#4189DD",

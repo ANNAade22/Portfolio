@@ -11,7 +11,10 @@ import {
   SiPostgresql,
   SiFirebase,
   SiFigma,
-  SiExpress
+  SiExpress,
+  SiAdobeaftereffects,
+  SiAdobepremierepro,
+  SiAdobeillustrator
 } from 'react-icons/si';
 import InfiniteScrollingLogos from '@/components/ui/InfiniteScrollingLogos';
 
@@ -57,6 +60,18 @@ const skillIconMap: Record<string, { node: React.ReactNode; href?: string }> = {
   'Figma handoff': {
     node: <IconWrapper><SiFigma size={ICON_SIZE} /></IconWrapper>,
     href: 'https://www.figma.com'
+  },
+  'Adobe After Effects': {
+    node: <IconWrapper><SiAdobeaftereffects size={ICON_SIZE} /></IconWrapper>,
+    href: 'https://www.adobe.com/products/aftereffects.html'
+  },
+  'Adobe Premiere Pro': {
+    node: <IconWrapper><SiAdobepremierepro size={ICON_SIZE} /></IconWrapper>,
+    href: 'https://www.adobe.com/products/premiere.html'
+  },
+  'Adobe Illustrator': {
+    node: <IconWrapper><SiAdobeillustrator size={ICON_SIZE} /></IconWrapper>,
+    href: 'https://www.adobe.com/products/illustrator.html'
   },
 };
 
