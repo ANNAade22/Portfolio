@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FaTwitter, FaGithub, FaWhatsapp, FaEnvelope, FaArrowRight } from 'react-icons/fa';
+import { FaTwitter, FaGithub, FaWhatsapp, FaEnvelope, FaArrowRight, FaCheck, FaTimes } from 'react-icons/fa';
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({
@@ -14,19 +14,45 @@ export default function ContactPage() {
     });
 
     const [focusedField, setFocusedField] = useState<string | null>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Create mailto link with form data
-        const mailtoLink = `mailto:anasadbulkadirhussein@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-            `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`
-        )}`;
-        window.location.href = mailtoLink;
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+        setErrorMessage('');
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                setFormData({ name: '', email: '', subject: '', company: '', message: '' });
+            } else {
+                const data = await response.json();
+                setSubmitStatus('error');
+                setErrorMessage(data.error || 'Failed to send message');
+            }
+        } catch {
+            setSubmitStatus('error');
+            setErrorMessage('Network error. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
+
 
     const socialLinks = [
         {
@@ -140,10 +166,23 @@ export default function ContactPage() {
                         transition={{ duration: 0.4, delay: 0.1 }}
                         className="relative"
                     >
-                        <div className="rounded-2xl border border-white/10 bg-panel/40 backdrop-blur-xl p-8 shadow-2xl">
+                        <motion.div
+                            className="rounded-2xl border border-white/10 bg-panel/40 backdrop-blur-xl p-8 shadow-2xl"
+                            animate={isSubmitting ? {
+                                x: [0, -5, 5, -5, 5, 0],
+                                transition: { duration: 0.5 }
+                            } : {}}
+                        >
                             <h2 className="text-2xl font-bold text-white mb-8">Say hello</h2>
 
-                            <form onSubmit={handleSubmit} className="space-y-6">
+                            <motion.form
+                                onSubmit={handleSubmit}
+                                className="space-y-6"
+                                animate={submitStatus === 'success' ? {
+                                    scale: [1, 0.98, 1],
+                                    transition: { duration: 0.4 }
+                                } : {}}
+                            >
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     {/* Name Field */}
                                     <div className="relative">
@@ -155,11 +194,11 @@ export default function ContactPage() {
                                             onFocus={() => setFocusedField('name')}
                                             onBlur={() => setFocusedField(null)}
                                             required
-                                            className="peer w-full bg-transparent border-b border-white/20 py-3 px-1 text-white placeholder-transparent focus:border-accent focus:outline-none transition-colors"
+                                            className="peer w-full bg-white/5 border border-white/20 py-3 px-4 text-white placeholder-transparent focus:border-accent focus:outline-none transition-colors rounded-lg"
                                             placeholder="Your name"
                                         />
                                         <label
-                                            className={`absolute left-1 transition-all duration-200 text-text/50 text-sm uppercase tracking-wider
+                                            className={`absolute left-4 transition-all duration-200 text-text/50 text-sm uppercase tracking-wider pointer-events-none
                         ${focusedField === 'name' || formData.name ? '-top-5' : 'top-3 text-base normal-case tracking-normal'}
                         peer-focus:-top-5 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-wider`}
                                         >
@@ -177,11 +216,11 @@ export default function ContactPage() {
                                             onFocus={() => setFocusedField('subject')}
                                             onBlur={() => setFocusedField(null)}
                                             required
-                                            className="peer w-full bg-transparent border-b border-white/20 py-3 px-1 text-white placeholder-transparent focus:border-accent focus:outline-none transition-colors"
+                                            className="peer w-full bg-white/5 border border-white/20 py-3 px-4 text-white placeholder-transparent focus:border-accent focus:outline-none transition-colors rounded-lg"
                                             placeholder="Subject"
                                         />
                                         <label
-                                            className={`absolute left-1 transition-all duration-200 text-text/50 text-sm uppercase tracking-wider
+                                            className={`absolute left-4 transition-all duration-200 text-text/50 text-sm uppercase tracking-wider pointer-events-none
                         ${focusedField === 'subject' || formData.subject ? '-top-5' : 'top-3 text-base normal-case tracking-normal'}
                         peer-focus:-top-5 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-wider`}
                                         >
@@ -200,11 +239,11 @@ export default function ContactPage() {
                                             onChange={handleChange}
                                             onFocus={() => setFocusedField('company')}
                                             onBlur={() => setFocusedField(null)}
-                                            className="peer w-full bg-transparent border-b border-white/20 py-3 px-1 text-white placeholder-transparent focus:border-accent focus:outline-none transition-colors"
+                                            className="peer w-full bg-white/5 border border-white/20 py-3 px-4 text-white placeholder-transparent focus:border-accent focus:outline-none transition-colors rounded-lg"
                                             placeholder="Company"
                                         />
                                         <label
-                                            className={`absolute left-1 transition-all duration-200 text-text/50 text-sm uppercase tracking-wider
+                                            className={`absolute left-4 transition-all duration-200 text-text/50 text-sm uppercase tracking-wider pointer-events-none
                         ${focusedField === 'company' || formData.company ? '-top-5' : 'top-3 text-base normal-case tracking-normal'}
                         peer-focus:-top-5 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-wider`}
                                         >
@@ -222,11 +261,11 @@ export default function ContactPage() {
                                             onFocus={() => setFocusedField('email')}
                                             onBlur={() => setFocusedField(null)}
                                             required
-                                            className="peer w-full bg-transparent border-b border-white/20 py-3 px-1 text-white placeholder-transparent focus:border-accent focus:outline-none transition-colors"
+                                            className="peer w-full bg-white/5 border border-white/20 py-3 px-4 text-white placeholder-transparent focus:border-accent focus:outline-none transition-colors rounded-lg"
                                             placeholder="Email address"
                                         />
                                         <label
-                                            className={`absolute left-1 transition-all duration-200 text-text/50 text-sm uppercase tracking-wider
+                                            className={`absolute left-4 transition-all duration-200 text-text/50 text-sm uppercase tracking-wider pointer-events-none
                         ${focusedField === 'email' || formData.email ? '-top-5' : 'top-3 text-base normal-case tracking-normal'}
                         peer-focus:-top-5 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-wider`}
                                         >
@@ -245,11 +284,11 @@ export default function ContactPage() {
                                         onBlur={() => setFocusedField(null)}
                                         required
                                         rows={4}
-                                        className="peer w-full bg-transparent border-b border-white/20 py-3 px-1 text-white placeholder-transparent focus:border-accent focus:outline-none transition-colors resize-none"
+                                        className="peer w-full bg-white/5 border border-white/20 py-3 px-4 text-white placeholder-transparent focus:border-accent focus:outline-none transition-colors resize-none rounded-lg"
                                         placeholder="Start typing here"
                                     />
                                     <label
-                                        className={`absolute left-1 transition-all duration-200 text-text/50 text-sm uppercase tracking-wider
+                                        className={`absolute left-4 transition-all duration-200 text-text/50 text-sm uppercase tracking-wider pointer-events-none
                       ${focusedField === 'message' || formData.message ? '-top-5' : 'top-3 text-base normal-case tracking-normal'}
                       peer-focus:-top-5 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-wider`}
                                     >
@@ -257,20 +296,139 @@ export default function ContactPage() {
                                     </label>
                                 </div>
 
-                                {/* Submit Button */}
-                                <motion.button
-                                    type="submit"
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    className="group flex items-center gap-2 px-8 py-4 bg-white text-background rounded-full font-semibold hover:bg-accent hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
-                                >
-                                    Submit
-                                    <span className="group-hover:translate-x-1 transition-transform inline-block">
-                                        <FaArrowRight />
-                                    </span>
-                                </motion.button>
-                            </form>
-                        </div>
+                                {/* Submit Button & Status */}
+                                <div className="space-y-4">
+                                    <motion.button
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        whileHover={!isSubmitting ? { scale: 1.02 } : {}}
+                                        whileTap={!isSubmitting ? { scale: 0.98 } : {}}
+                                        animate={
+                                            isSubmitting
+                                                ? {
+                                                    scale: [1, 1.02, 1],
+                                                    boxShadow: [
+                                                        '0 10px 30px rgba(255, 255, 255, 0.1)',
+                                                        '0 10px 40px rgba(255, 255, 255, 0.2)',
+                                                        '0 10px 30px rgba(255, 255, 255, 0.1)',
+                                                    ],
+                                                    transition: {
+                                                        duration: 1,
+                                                        repeat: Infinity,
+                                                        ease: "easeInOut"
+                                                    }
+                                                }
+                                                : submitStatus === 'success'
+                                                    ? {
+                                                        scale: [1, 1.05, 1],
+                                                        backgroundColor: ['#ffffff', '#10b981', '#10b981'],
+                                                        transition: { duration: 0.6 }
+                                                    }
+                                                    : {}
+                                        }
+                                        className={`group w-full flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl ${isSubmitting
+                                            ? 'bg-gray-400 cursor-not-allowed'
+                                            : submitStatus === 'success'
+                                                ? 'bg-green-500 text-white'
+                                                : 'bg-white text-background hover:bg-accent hover:text-white'
+                                            }`}
+                                    >
+                                        {isSubmitting ? (
+                                            <>
+                                                <motion.svg
+                                                    className="h-5 w-5"
+                                                    viewBox="0 0 24 24"
+                                                    animate={{ rotate: 360 }}
+                                                    transition={{
+                                                        duration: 1,
+                                                        repeat: Infinity,
+                                                        ease: "linear"
+                                                    }}
+                                                >
+                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                                                </motion.svg>
+                                                Sending...
+                                            </>
+                                        ) : submitStatus === 'success' ? (
+                                            <motion.div
+                                                initial={{ scale: 0, rotate: -180 }}
+                                                animate={{ scale: 1, rotate: 0 }}
+                                                transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                                                className="flex items-center gap-2"
+                                            >
+                                                <FaCheck className="text-xl" />
+                                                Sent!
+                                            </motion.div>
+                                        ) : (
+                                            <>
+                                                Submit
+                                                <span className="group-hover:translate-x-1 transition-transform inline-block">
+                                                    <FaArrowRight />
+                                                </span>
+                                            </>
+                                        )}
+                                    </motion.button>
+
+                                    {/* Success Message */}
+                                    {submitStatus === 'success' && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                                            animate={{
+                                                opacity: 1,
+                                                y: 0,
+                                                scale: 1,
+                                            }}
+                                            transition={{
+                                                type: "spring",
+                                                stiffness: 200,
+                                                damping: 15
+                                            }}
+                                            className="relative flex items-center gap-2 text-green-400 bg-green-400/10 px-4 py-3 rounded-lg border border-green-400/20 overflow-hidden"
+                                        >
+                                            {/* Glow effect */}
+                                            <motion.div
+                                                className="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/10 to-transparent"
+                                                animate={{
+                                                    x: ['-100%', '100%'],
+                                                }}
+                                                transition={{
+                                                    duration: 2,
+                                                    repeat: 1,
+                                                    ease: "easeInOut"
+                                                }}
+                                            />
+                                            <motion.div
+                                                initial={{ scale: 0, rotate: -180 }}
+                                                animate={{ scale: 1, rotate: 0 }}
+                                                transition={{
+                                                    type: "spring",
+                                                    stiffness: 300,
+                                                    damping: 10,
+                                                    delay: 0.1
+                                                }}
+                                            >
+                                                <FaCheck />
+                                            </motion.div>
+                                            <span className="relative z-10">Message sent successfully! I&apos;ll get back to you soon.</span>
+                                        </motion.div>
+                                    )}
+
+                                    {/* Error Message */}
+                                    {submitStatus === 'error' && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            className="flex items-center gap-2 text-red-400 bg-red-400/10 px-4 py-3 rounded-lg"
+                                        >
+                                            <FaTimes />
+                                            <span>{errorMessage}</span>
+                                        </motion.div>
+                                    )}
+                                </div>
+                            </motion.form>
+
+                        </motion.div>
                     </motion.div>
                 </div>
             </div>

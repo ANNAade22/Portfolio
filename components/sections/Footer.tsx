@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import config from '@/portfolio-plan.json';
 
 export function Footer() {
@@ -75,19 +76,20 @@ export function Footer() {
             <p className="text-lg text-text/70 max-w-2xl mx-auto">
               {footer.cta}
             </p>
-            <motion.button
-              onClick={handleAction}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl border-2 mt-6"
-              style={{
-                backgroundColor: 'transparent',
-                color: footer.button.color,
-                borderColor: footer.button.color,
-              }}
-            >
-              {footer.button.text}
-            </motion.button>
+            <Link href="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl border-2 mt-6"
+                style={{
+                  backgroundColor: 'transparent',
+                  color: footer.button.color,
+                  borderColor: footer.button.color,
+                }}
+              >
+                {footer.button.text}
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
       </div>
