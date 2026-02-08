@@ -75,7 +75,7 @@
               "Role-Based Auth"
             ],
             "linkText": "View details",
-            "linkUrl": "sms-tawny-eight.vercel.app",
+            "linkUrl": "https://sms-tawny-eight.vercel.app/",
             "imageUrl": "/imageProject2.png",
             "imageFit": "contain",
             "imagePosition": "center"
@@ -103,7 +103,7 @@
               "Responsive Design"
             ],
             "linkText": "View case study",
-            "linkUrl": "#",
+            "linkUrl": "https://onstruction-website.vercel.app/",
             "imageUrl": "/silverline-portfolio.png",
             "imageFit": "contain",
             "imagePosition": "top"
