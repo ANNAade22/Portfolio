@@ -75,28 +75,28 @@
               "Role-Based Auth"
             ],
             "linkText": "View details",
-            "linkUrl": "#",
-            "imageUrl": "/project-university-system.png",
+            "linkUrl": "sms-tawny-eight.vercel.app",
+            "imageUrl": "/imageProject2.png",
             "imageFit": "contain",
             "imagePosition": "center"
           },
           {
             "title": "University Landing Page",
-            "description": "Modern, high-conversion landing page designed to attract prospective students and showcase campus life.",
+            "description": "Modern university landing page displaying portfolio and campus life to attract prospective students.",
             "tech": [
               "React",
               "Tailwind CSS",
               "Framer Motion"
             ],
             "linkText": "Visit site",
-            "linkUrl": "#",
-            "imageUrl": "/project-landing-page.png",
+            "linkUrl": "https://almarwazi.vercel.app/",
+            "imageUrl": "/imageProject1.png",
             "imageFit": "contain",
             "imagePosition": "center top"
           },
           {
             "title": "Construction Portfolio",
-            "description": "A professional portfolio for a construction company showcasing projects and services.",
+            "description": "Zambian-owned construction firm specializing in sustainable Civil, Electrical, and Mechanical engineering solutions.",
             "tech": [
               "Next.js",
               "Tailwind CSS",
@@ -104,21 +104,35 @@
             ],
             "linkText": "View case study",
             "linkUrl": "#",
-            "imageUrl": "/project-construction.png",
+            "imageUrl": "/silverline-portfolio.png",
             "imageFit": "contain",
             "imagePosition": "top"
           },
           {
-            "title": "Beauty Company Website",
-            "description": "Elegant and visual-first e-commerce interface for a beauty brand.",
+            "title": "iMusafir Global",
+            "description": "Luxury Hajj & Umrah travel agency providing premium packages with commercial flights, 5-star hotels, and visa assistance.",
             "tech": [
               "React",
-              "Shopify/Custom",
-              "Design Systems"
+              "Tailwind CSS",
+              "Vite"
             ],
-            "linkText": "Explore",
-            "linkUrl": "#",
-            "imageUrl": "/project-beauty.png",
+            "linkText": "Visit site",
+            "linkUrl": "https://bb-alpha-cyan.vercel.app/",
+            "imageUrl": "/imusafir.jpeg",
+            "imageFit": "contain",
+            "imagePosition": "center"
+          },
+          {
+            "title": "Office of the Auditor General - Galmudug",
+            "description": "Official website for the Galmudug State Auditor General, ensuring transparency and accountability in public sector finance.",
+            "tech": [
+              "React",
+              "Tailwind CSS",
+              "Vite"
+            ],
+            "linkText": "Visit site",
+            "linkUrl": "https://galmudugaog.vercel.app/",
+            "imageUrl": "/Galmudug OAG.jpeg",
             "imageFit": "contain",
             "imagePosition": "center"
           }

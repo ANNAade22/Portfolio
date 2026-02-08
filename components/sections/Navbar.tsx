@@ -18,7 +18,7 @@ export function Navbar() {
         { label: 'Home', href: '/' },
         { label: 'Resume', href: '/resume' },
         { label: 'Contact', href: '/contact' },
-        { label: 'My work', href: '#projects' },
+        { label: 'My work', href: '/work' },
     ];
 
     const pathname = usePathname();
