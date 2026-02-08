@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
         }
 
         // Send confirmation email to the sender
-        await resend.emails.send({
+        const { error: confirmationError } = await resend.emails.send({
             from: 'Anas Adbulkadir <onboarding@resend.dev>',
             to: [email],
             subject: `✅ Got your message, ${name.split(' ')[0]}!`,
@@ -113,6 +113,10 @@ export async function POST(request: NextRequest) {
                 </div>
             `,
         });
+
+        if (confirmationError) {
+            console.error('Failed to send confirmation email:', confirmationError);
+        }
 
         return NextResponse.json(
             { success: true, messageId: data?.id },
