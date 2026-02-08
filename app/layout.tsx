@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   title: 'Portfolio',
   description: 'Interactive portfolio showcasing projects and skills',
   icons: {
-    icon: getPath('/Anas.png'),
-    shortcut: getPath('/Anas.png'),
-    apple: getPath('/Anas.png'),
+    icon: getPath('/favcon.jpeg'),
+    shortcut: getPath('/favcon.jpeg'),
+    apple: getPath('/favcon.jpeg'),
   },
 };
 
