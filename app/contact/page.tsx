@@ -41,9 +41,10 @@ export default function ContactPage() {
                 setSubmitStatus('error');
                 setErrorMessage(data.error || 'Failed to send message');
             }
-        } catch {
+        } catch (error) {
+            console.error('Submission error:', error);
             setSubmitStatus('error');
-            setErrorMessage('Network error. Please try again.');
+            setErrorMessage(error instanceof Error ? error.message : 'Unknown network error');
         } finally {
             setIsSubmitting(false);
         }
