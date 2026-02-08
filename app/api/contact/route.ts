@@ -1,11 +1,14 @@
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend inside the handler to avoid build-time errors
+// const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
     console.log('API Route hit:', new Date().toISOString());
     console.log('Environment Key exists:', !!process.env.RESEND_API_KEY);
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     try {
         const body = await request.json();
